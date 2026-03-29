@@ -1,0 +1,20 @@
+{
+    "folders": [
+        { "path": "os-dev" },
+        { "path": "apps" },
+        { "path": "web" },
+        { "path": "cyber" },
+        { "path": "scripts" },
+        { "path": "tools" },
+        { "path": "labs" },
+        { "path": "configs" },
+        { "path": "docs" }
+    ],
+    "settings": {
+        "editor.fontFamily": "JetBrains Mono",
+        "editor.fontLigatures": true,
+        "editor.formatOnSave": true,
+        "workbench.colorTheme": "Dracula Official",
+        "workbench.iconTheme": "material-icon-theme"
+    }
+}
