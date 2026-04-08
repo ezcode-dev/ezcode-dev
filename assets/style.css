@@ -1,0 +1,207 @@
+:root {
+    --neon-primary: #00ff41;
+    --neon-hover: #00cc33;
+    --dark-bg: #050505;
+    --panel-bg: #0f0f0f;
+    --border-color: #1a1a1a;
+    --glow: 0 0 10px var(--neon-primary);
+    --font-mono: 'Consolas', 'Courier New', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--neon-primary);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CRT Scanline Effect */
+.crt-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* --- TERMINAL STYLES --- */
+.terminal-body {
+    padding: 20px;
+    justify-content: center;
+}
+
+#terminal-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+#terminal-output p {
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.system-msg { opacity: 0.8; }
+.highlight { font-weight: bold; text-shadow: var(--glow); }
+
+.input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.prompt {
+    margin-right: 10px;
+    color: #fff;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: var(--neon-primary);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    flex-grow: 1;
+    outline: none;
+    text-shadow: var(--glow);
+}
+
+/* --- SUBPAGE STYLES --- */
+.page-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 20px;
+    flex-grow: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--neon-primary);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-shadow: var(--glow);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-btn, .action-btn {
+    background: transparent;
+    color: var(--neon-primary);
+    border: 1px solid var(--neon-primary);
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-btn:hover, .action-btn:hover {
+    background: var(--neon-primary);
+    color: var(--dark-bg);
+    box-shadow: var(--glow);
+}
+
+/* Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--neon-primary);
+    box-shadow: var(--glow);
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* File Explorer */
+.file-explorer {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+}
+
+.file-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+}
+
+.file-row:last-child {
+    border-bottom: none;
+}
+
+.file-row:hover {
+    background: #111;
+    border-left: 3px solid var(--neon-primary);
+}
+
+.file-info span {
+    display: block;
+}
+
+.file-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.file-meta {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    border-top: 1px solid #111;
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+    header { flex-direction: column; gap: 15px; text-align: center; }
+    .file-row { flex-direction: column; gap: 15px; align-items: flex-start; }
+}
