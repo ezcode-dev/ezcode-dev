@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3ZCOD3 SYSTEM</title>
-
-<link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3ZCOD3 SYSTEM - Terminal</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
+<body class="terminal-body">
+    <div class="crt-overlay"></div>
+    <div id="terminal-container">
+        <div id="terminal-output">
+            <p class="system-msg">BOOT SEQUENCE INITIATED...</p>
+            <p class="system-msg">LOADING 3ZCOD3_CORE MODULES... [OK]</p>
+            <p class="system-msg">AUTHORIZATION GRANTED. WELCOME TO THE SYSTEM.</p>
+            <p class="info-msg">Type <span class="highlight">'help'</span> to view available commands.</p>
+            <br>
+        </div>
+        <div class="input-line">
+            <span class="prompt">admin@3ZCOD3:~$</span>
+            <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
+        </div>
+    </div>
+    
+    <footer>SYS_ADMIN: KZILLAH // SECURE CONNECTION</footer>
 
-<body>
-
-<div class="terminal">
-    <h1>3ZCOD3 SYSTEM</h1>
-    <p id="output">Type "help" to begin...</p>
-    <input type="text" id="command" placeholder="Enter command..." autofocus>
-</div>
-
-<script src="assets/script.js"></script>
-
+    <script src="scripts/script.js"></script>
 </body>
 </html>
